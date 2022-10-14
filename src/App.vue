@@ -1,15 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <navbar-comp/>
+<router-view></router-view>
+<!-- <products-comp @getDataFromProducts="getDataFromProducts"/>
+<cart-comp :products="products"/> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavbarComp from './components/NavbarComp.vue'
+
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: 
+    { NavbarComp},
+  
+  data(){
+    return{
+      products:[]
+    }
+  },
+  methods:{
+    // getDataFromProducts(data){
+    //   this.products.push("productData",data)
+    //   console.log("data",this.products);
+    // }
   }
 }
 </script>
@@ -21,6 +36,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
